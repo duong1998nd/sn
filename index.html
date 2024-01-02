@@ -2,7 +2,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>&HuyenHuyen</title>
+    <title>&MingNgoc</title>
 
     <link type="text/css" rel="stylesheet" href="./index_files/default.css">
     <script type="text/javascript" src="./index_files/jquery.min.js"></script>
@@ -26,7 +26,7 @@
 </head>
 <body>
 
-<img src="https://ajlovechina.github.io/loveBalloon/static/music.png" style="position: fixed;z-index: 10001;top:10px;right:10px;" onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}">
+<img src="https://ajlovechina.github.io/loveBalloon/static/music.png" style="position: fixed;z-index: 10001;top:20px;right:20px;" onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}">
 <audio class="song-audio-autoplay" controls loop style="display: none;visibility: hidden">
     <source src="./index_files/music.mp3" type="audio/mp3"/>
 </audio>
@@ -61,7 +61,9 @@
                     <span id="clock-box-inside-text">
                         
 					</span>
-            <div id="clock"></div>
+            <div id="clock">
+
+            </div>
         </div>
         <canvas id="canvas" width="1100" height="680"></canvas>
     </div>
@@ -70,7 +72,7 @@
 
 <script type="text/javascript">
     $('#code').html(config.lines.map(item => {
-        return `<span class="say">${item}</span><br>
+        return `<span class="say">${item}</span>
 						<span class="say"> </span><br>`
     }).reduce((a, b) => {
         return a + b;
@@ -208,7 +210,7 @@
         }));
 
         var textAnimate = eval(Jscex.compile("async", function () {
-            // var together = new Date(config.date);
+             var together = new Date(config.date);
 
             $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
